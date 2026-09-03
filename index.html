@@ -39,6 +39,23 @@ function show(n,update=true){
  [...dots.children].forEach(b=>{const a=Number(b.dataset.v)===current;b.classList.toggle('active',a);b.setAttribute('aria-current',a?'true':'false')});
  const i=versions.findIndex(x=>x.n===current);prev.disabled=i===0;next.disabled=i===versions.length-1;if(update)updateUrl()
 }
+function wireExternalSchemes(){
+ try{
+  const doc=preview.contentDocument;
+  if(!doc||doc.documentElement.dataset.jgExternalSchemesWired==='1')return;
+  doc.documentElement.dataset.jgExternalSchemesWired='1';
+  doc.addEventListener('click',e=>{
+   const target=e.target&&e.target.closest?e.target.closest('a[href]'):null;
+   if(!target)return;
+   const href=(target.getAttribute('href')||'').trim();
+   if(!/^(mailto:|tel:)/i.test(href))return;
+   e.preventDefault();
+   e.stopPropagation();
+   window.location.href=href;
+  },true);
+ }catch(e){}
+}
+preview.addEventListener('load',wireExternalSchemes);
 versions.forEach(item=>{const b=document.createElement('button');b.type='button';b.className='dot';b.dataset.v=item.n;b.textContent=item.n;b.setAttribute('aria-label','Toon '+item.label);b.onclick=()=>show(item.n);dots.appendChild(b)});
 prev.onclick=()=>{const i=versions.findIndex(x=>x.n===current);if(i>0)show(versions[i-1].n)};
 next.onclick=()=>{const i=versions.findIndex(x=>x.n===current);if(i<versions.length-1)show(versions[i+1].n)};
