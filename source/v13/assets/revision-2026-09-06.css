@@ -1,0 +1,87 @@
+/* Changes requested on 6 September, preserving the v13 visual direction. */
+.design-v13 .hero h1 { font-size: 2.4rem; line-height: 1.16; letter-spacing: 0; }
+.design-v13 .hero-grid { align-items: stretch; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.design-v13 .hero-copy { min-height: 480px; display: flex; flex-direction: column; justify-content: center; }
+.design-v13 .hero-photo { min-height: 0; border-radius: 42px; }
+.design-v13 .home-routes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-routes .route { padding: 30px; }
+.home-routes .route::after { display: none; }
+.home-routes h3 { font-size: 1.3rem; line-height: 1.35; letter-spacing: 0; }
+.home-routes .eyebrow { min-height: 2.9em; letter-spacing: 0; }
+.route-links { display: grid; gap: 14px; }
+.route-links a { line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
+.about-media { display: grid; gap: 24px; min-width: 0; }
+.design-v13 .about-photo { min-height: 0; aspect-ratio: 4 / 3; border-radius: 28px; }
+.about-photo img { object-position: center 24%; }
+.video-thumbnail { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; background: #242424; }
+.video-thumbnail > img { width: 100%; height: 100%; object-fit: cover; }
+.video-play { width: 64px; height: 48px; display: grid; place-items: center; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); background: #bf2026; border-radius: 8px; box-shadow: 0 2px 10px #0003; }
+.video-play img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
+.video-thumbnail:hover .video-play { background: #a31218; }
+.video-thumbnail:focus-visible { outline: 3px solid var(--brand); outline-offset: 5px; }
+.video-caption { position: absolute; inset: auto 0 0; display: flex; gap: 12px; justify-content: space-between; padding: 10px 16px; background: #242424; color: #fff; font-size: .9rem; }
+.video-caption span { white-space: nowrap; }
+.home-trust .trust-grid { align-items: center; gap: 58px; }
+.home-trust h2 { font-size: 2.05rem; letter-spacing: 0; line-height: 1.25; }
+.affiliations { min-width: 0; font-size: 1rem; }
+.affiliations > p { margin-top: 0; }
+.affiliations .trust-logos { border: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 18px; }
+.affiliations .trust-logos a { min-width: 0; }
+.affiliations .trust-logos img { width: 100%; height: 56px; object-fit: contain; }
+.affiliations img[alt="KNOV"] { filter: brightness(0); opacity: .7; }
+.design-v13 .page-hero > .practical-container { display: block; padding: 0; border: 0; background: transparent; box-shadow: none; }
+.practical-container .quickbar { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+.practical-container .quickbar > div { flex: 0 0 calc((100% - 42px) / 4); text-align: center; }
+.service-columns { align-items: start; }
+.design-v13 .podcast-photo { width: 100%; max-width: 420px; height: auto; aspect-ratio: 3 / 4; justify-self: center; }
+.service-columns .section-head { margin-bottom: 22px; }
+.service-columns .section-head h2 { margin-top: .15em; }
+.service-contact { margin: 32px 0 0; }
+.keep-together { white-space: nowrap; }
+.info-grid-pairs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.training-nav { margin: 0 auto; padding: 0; }
+.training-nav a { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; padding: 10px 0; margin-right: 24px; font-size: .95rem; }
+.training-nav a:hover { border-color: var(--brand); background: transparent; }
+section[id] { scroll-margin-top: 110px; }
+.training-grid { align-items: start; }
+.training-card h4 { color: var(--brand-dark); font-size: 1rem; margin: 28px 0 10px; }
+.training-date { border-top: 1px solid var(--line); padding: 16px 0 0; }
+.training-date p { margin-bottom: 0; }
+.course-editions { margin-top: 40px; gap: 48px; }
+.course-edition { min-width: 0; }
+.course-edition .date-row { align-items: start; }
+.course-edition time { white-space: nowrap; }
+.course-edition .date-row > span { text-align: right; }
+.design-v13 main h3 { letter-spacing: 0; }
+.design-v13 main .section-head h2 { font-size: 2.05rem; letter-spacing: 0; }
+.design-v13 main > section > .container > * { min-width: 0; }
+.design-v13 .btn { max-width: 100%; white-space: normal; text-align: center; }
+@media (max-width: 1100px) {
+  .home-routes .route { padding: 24px; }
+  .design-v13 .hero-copy { padding: 36px; }
+  .nav-links { gap: 2px; }
+  .nav-links a { padding: 10px; }
+}
+@media (max-width: 900px) {
+  .design-v13 .hero-copy { min-height: 0; }
+  .design-v13 .hero-photo { min-height: 0; aspect-ratio: 4 / 3; }
+  .design-v13 .home-routes { grid-template-columns: 1fr; }
+  .home-routes .eyebrow { min-height: 0; }
+  .home-trust .trust-grid { gap: 38px; }
+  .about-media { max-width: 620px; width: 100%; }
+  .practical-container .quickbar > div { flex-basis: calc((100% - 14px) / 2); }
+  .course-editions { gap: 32px; }
+}
+@media (max-width: 560px) {
+  .design-v13 .hero h1 { font-size: 2rem; }
+  .design-v13 .hero-copy { padding: 30px 24px; }
+  .design-v13 .hero-photo { border-radius: 28px; }
+  .design-v13 main .section-head h2, .home-trust h2 { font-size: 1.65rem; }
+  .home-trust .trust-grid { gap: 36px; }
+  .practical-container .quickbar > div { padding: 18px 12px; }
+  .info-grid-pairs { grid-template-columns: 1fr; }
+  .video-caption { font-size: .78rem; padding: 9px 10px; }
+  .affiliations .trust-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .training-nav { gap: 8px 16px; }
+  .training-nav a { margin-right: 0; }
+}
